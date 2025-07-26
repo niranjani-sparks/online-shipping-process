@@ -1,0 +1,60 @@
+package oops;
+import java.util.Scanner;
+class onlineorder{
+	int orderId;
+	String customername;
+	String productname;
+	int quantity;
+	double price;
+	String orderstatus;
+	onlineorder(int a, String b, String c, int d , double e, String f )
+	{
+		 orderId=a;
+		 customername=b;
+		 productname=c;
+		 quantity=d;
+		 price=e;
+		 orderstatus=f;
+		
+	}
+	void display() {
+		System.out.println("orderId : "+orderId);
+		System.out.println("customername : "+customername);
+		System.out.println("productname : "+productname);
+		System.out.println("quantity : "+quantity);
+		System.out.println("price : "+price);
+		System.out.println("Totalprice : "+calculationTotalprice(quantity,price));
+		System.out.println("orderstatus : "+orderstatus);
+	}
+	
+		static double calculationTotalprice(int quantity,double price) {
+			return quantity*price;
+		}
+}
+public class onlineorder_processing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner (System.in);
+		System.out.println("Enter OrderId :");
+		int a= scan.nextInt();
+	    System.out.println("Enter customername:");
+	    scan.nextLine();
+	    String b = scan.nextLine();
+	    System.out.println("Enter productname:");
+	    String c = scan.nextLine();
+	    System.out.println("Enter quantity:");
+	    int d = scan.nextInt();
+	    System.out.println("Enter price:");
+	    double e = scan.nextDouble();
+	    System.out.println("Enter orderstatus:");
+	    scan.nextLine();
+	    String f=scan.nextLine();
+	    System.out.println("---------------order summary----------------");
+	    onlineorder bo = new onlineorder(a,b,c,d,e,f);
+	    bo.display();
+		
+
+	}
+
+}
